@@ -7,9 +7,9 @@ import fetch from 'electron-fetch';
 
 import formatMessage from 'format-message';
 import parseReleaseMessage from 'openblock-parse-release-message';
-import {UPDATE_TARGET, UPDATE_MODAL_STATE} from 'openblock-gui/src/lib/update-state.js';
+import {UPDATE_TARGET, UPDATE_MODAL_STATE} from 'scratch-arduino-gui/src/lib/update-state.js';
 import {AbortController} from 'node-abort-controller';
-class OpenblockDesktopUpdater {
+class ScratchDesktopUpdater {
     constructor (webContents, resourceServer) {
         this._webContents = webContents;
         this._resourceServer = resourceServer;
@@ -304,4 +304,4 @@ class OpenblockDesktopUpdater {
     }
 }
 
-export default OpenblockDesktopUpdater;
+export default ScratchDesktopUpdater;

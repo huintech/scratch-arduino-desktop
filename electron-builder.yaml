@@ -1,23 +1,23 @@
 directories:
   buildResources: buildResources
   output: dist
-extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
+extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", "drivers"]
 
-appId: openblock.cc.openblock-desktop
-productName: "OpenBlockDesktop"
+appId: net.huintech.scratch-arduino-desktop
+productName: "CoconutScratchDesktop"
 publish:
   - provider: github
   - provider: spaces
-    name: openblock
+    name: coconut
     path: desktop
     region: sgp1
-artifactName: "OpenBlock-Desktop_v${version}_${os}_${arch}.${ext}"
+artifactName: "Coconut-ScratchDesktop_v${version}_${os}_${arch}.${ext}"
 
 fileAssociations:
-  ext: ob
-  name: OpenBlock project file
+  ext: sb3
+  name: Scratch project file
   role: Editor
-  icon: buildResources/OpenBlockFile.ico
+  icon: buildResources/ScratchDesktop.ico
 
 mac:
   category: public.app-category.education
@@ -29,13 +29,13 @@ mac:
         This app requires microphone access when recording sounds or detecting loudness.
   gatekeeperAssess: true
   hardenedRuntime: true
-  icon: buildResources/OpenBlockDesktop.icns
+  icon: buildResources/ScratchDesktop.icns
   provisioningProfile: embedded.provisionprofile
   target:
     - dmg
     # - mas
 dmg:
-  title: "OpenBlock-Desktop_${version}"
+  title: "Scratch-Desktop_${version}"
 # mas:
 #   category: public.app-category.education
 #   entitlements: buildResources/entitlements.mas.plist
@@ -47,7 +47,7 @@ dmg:
 #   provisioningProfile: mas-dev.provisionprofile
 
 win:
-  icon: buildResources/OpenBlockDesktop.ico
+  icon: buildResources/ScratchDesktop.ico
   target:
     # - appx
     - nsis
@@ -61,18 +61,18 @@ nsis:
   include: buildResources/installer.nsh
 #   license: LICENSE
 
-linux:
-  category: Education
-  icon: buildResources/linux
-  desktop:
-    - Encoding: UTF-8
-    - Name: OpenBlockDesktop
-    - Icon: openblock-desktop
-    - Type: Application
-    - Terminal: false
-  target:
-    - deb
-
-deb:
-  depends: ["libnotify4", "libxtst6", "libnss3"]
+#linux:
+#  category: Education
+#  icon: buildResources/linux
+#  desktop:
+#    - Encoding: UTF-8
+#    - Name: CoconutScratchDesktop
+#    - Icon: openblock-desktop
+#    - Type: Application
+#    - Terminal: false
+#  target:
+#    - deb
+#
+#deb:
+#  depends: ["libnotify4", "libxtst6", "libnss3"]
 

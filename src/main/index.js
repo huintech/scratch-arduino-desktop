@@ -7,9 +7,9 @@ import {promisify} from 'util';
 
 import argv from './argv';
 import {getFilterForExtension} from './FileFilters';
-import telemetry from './OpenblockDesktopTelemetry';
-import Updater from './OpenblockDesktopUpdater';
-import DesktopLink from './OpenblockDesktopLink.js';
+import telemetry from './ScratchDesktopTelemetry';
+// import Updater from './ScratchDesktopUpdater';
+import DesktopLink from './ScratchDesktopLink.js';
 import MacOSMenu from './MacOSMenu';
 import log from '../common/log.js';
 import {productName, version} from '../../package.json';
@@ -17,7 +17,7 @@ import {productName, version} from '../../package.json';
 import {v4 as uuidv4} from 'uuid';
 import ElectronStore from 'electron-store';
 import formatMessage from 'format-message';
-import locales from 'openblock-l10n/locales/desktop-msgs';
+import locales from 'scratch-arduino-l10n/locales/desktop-msgs';
 
 const storage = new ElectronStore();
 const desktopLink = new DesktopLink();
@@ -301,7 +301,7 @@ const createLoadingWindow = () => {
         transparent: true,
         hasShadow: false,
         search: 'route=loading',
-        title: `Loding ${productName} ${version}`
+        title: `Loading ${productName} ${version}`
     });
 
     window.once('ready-to-show', () => {
@@ -313,7 +313,8 @@ const createLoadingWindow = () => {
 
 const getIsProjectSave = downloadItem => {
     switch (downloadItem.getMimeType()) {
-    case 'application/x.openblock.ob':
+    // case 'application/x.openblock.ob':
+    case 'application/x.scratch.sb3':
         return true;
     }
     return false;
@@ -327,7 +328,7 @@ const createMainWindow = () => {
     });
     const webContents = window.webContents;
 
-    const update = new Updater(webContents, desktopLink.resourceServer);
+    // const update = new Updater(webContents, desktopLink.resourceServer);
     remote.initialize();
     remote.enable(webContents);
 
@@ -410,13 +411,13 @@ const createMainWindow = () => {
             type: 'question',
             message: formatMessage({
                 id: 'index.questionLeave',
-                default: 'Leave Openblock?',
-                description: 'prompt for leave Openblock'
+                default: 'Leave Scratch?',
+                description: 'prompt for leave Scratch'
             }),
             detail: formatMessage({
                 id: 'index.questionLeaveDetail',
                 default: 'Any unsaved changes will be lost.',
-                description: 'detail prompt for leave Openblock'
+                description: 'detail prompt for leave Scratch'
             }),
             buttons: [
                 formatMessage({
@@ -447,29 +448,29 @@ const createMainWindow = () => {
 
         webContents.send('setPlatform', process.platform);
 
-        update.checkUpdateAtStartup();
+        // update.checkUpdateAtStartup();
     });
 
     ipcMain.on('reqeustCheckUpdate', () => {
-        update.reqeustCheckUpdate();
+        // update.reqeustCheckUpdate();
     });
 
     ipcMain.on('reqeustUpdate', () => {
-        update.reqeustUpdate()
-            .then(() => {
-                setTimeout(() => {
-                    console.log(`INFO: App will restart after 3 seconds`);
-                    app.relaunch();
-                    app.exit();
-                }, 1000 * 3);
-            })
-            .catch(err => {
-                console.error(`ERR!: update failed: ${err}`);
-            });
+        // update.reqeustUpdate()
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             console.log(`INFO: App will restart after 3 seconds`);
+        //             app.relaunch();
+        //             app.exit();
+        //         }, 1000 * 3);
+        //     })
+        //     .catch(err => {
+        //         console.error(`ERR!: update failed: ${err}`);
+        //     });
     });
 
     ipcMain.on('abortUpdate', () => {
-        update.abortUpdate();
+        // update.abortUpdate();
     });
 
     return window;

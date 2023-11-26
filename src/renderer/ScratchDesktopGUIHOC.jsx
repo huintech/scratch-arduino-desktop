@@ -6,7 +6,7 @@ import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
-import GUIComponent from 'openblock-gui/src/components/gui/gui.jsx';
+import GUIComponent from 'scratch-arduino-gui/src/components/gui/gui.jsx';
 import {FormattedMessage} from 'react-intl';
 
 import {
@@ -17,17 +17,17 @@ import {
     requestNewProject,
     requestProjectUpload,
     setProjectId
-} from 'openblock-gui/src/reducers/project-state';
+} from 'scratch-arduino-gui/src/reducers/project-state';
 import {
     openLoadingProject,
     closeLoadingProject,
     openTelemetryModal,
     openUpdateModal
-} from 'openblock-gui/src/reducers/modals';
-import {setUpdate} from 'openblock-gui/src/reducers/update';
+} from 'scratch-arduino-gui/src/reducers/modals';
+// import {setUpdate} from 'scratch-arduino-gui/src/reducers/update';
 
-import analytics, {initialAnalytics} from 'openblock-gui/src/lib/analytics';
-import MessageBoxType from 'openblock-gui/src/lib/message-box.js';
+import analytics, {initialAnalytics} from 'scratch-arduino-gui/src/lib/analytics';
+import MessageBoxType from 'scratch-arduino-gui/src/lib/message-box.js';
 
 import ElectronStorageHelper from '../common/ElectronStorageHelper';
 
@@ -88,9 +88,9 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
         }
         componentDidMount () {
             ipcRenderer.on('setTitleFromSave', this.handleSetTitleFromSave);
-            ipcRenderer.on('setUpdate', (event, args) => {
-                this.props.onSetUpdate(args);
-            });
+            // ipcRenderer.on('setUpdate', (event, args) => {
+            //     this.props.onSetUpdate(args);
+            // });
             ipcRenderer.on('setUserId', (event, args) => {
                 initialAnalytics(args);
                 // Register "base" page view
@@ -109,15 +109,15 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
         handleClickLicense () {
             ipcRenderer.send('open-license-window');
         }
-        handleClickCheckUpdate () {
-            ipcRenderer.send('reqeustCheckUpdate');
-        }
-        handleClickUpdate () {
-            ipcRenderer.send('reqeustUpdate');
-        }
-        handleAbortUpdate () {
-            ipcRenderer.send('abortUpdate');
-        }
+        // handleClickCheckUpdate () {
+        //     ipcRenderer.send('reqeustCheckUpdate');
+        // }
+        // handleClickUpdate () {
+        //     ipcRenderer.send('reqeustUpdate');
+        // }
+        // handleAbortUpdate () {
+        //     ipcRenderer.send('abortUpdate');
+        // }
         handleClickClearCache () {
             ipcRenderer.send('clearCache');
         }
@@ -236,7 +236,7 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
         onLoadingStarted: PropTypes.func,
         onRequestNewProject: PropTypes.func,
         onTelemetrySettingsClicked: PropTypes.func,
-        onSetUpdate: PropTypes.func,
+        // onSetUpdate: PropTypes.func,
         // using PropTypes.instanceOf(VM) here will cause prop type warnings due to VM mismatch
         vm: GUIComponent.WrappedComponent.propTypes.vm
     };
@@ -268,10 +268,10 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
             return dispatch(onLoadedProject(loadingState, canSaveToServer, loadSuccess));
         },
         onRequestNewProject: () => dispatch(requestNewProject(false)),
-        onSetUpdate: arg => {
-            dispatch(setUpdate(arg));
-            dispatch(openUpdateModal());
-        },
+        // onSetUpdate: arg => {
+        //     dispatch(setUpdate(arg));
+        //     dispatch(openUpdateModal());
+        // },
         onTelemetrySettingsClicked: () => dispatch(openTelemetryModal())
     });
 

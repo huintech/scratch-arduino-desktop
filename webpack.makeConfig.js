@@ -80,10 +80,11 @@ const makeConfig = function (defaultConfig, options) {
                     }, {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
+                            modules: {
+                                localIdentName: '[name]_[local]_[hash:base64:5]'
+                            },
                             importLoaders: 1,
-                            localIdentName: '[name]_[local]_[hash:base64:5]',
-                            camelCase: true
+                            localsConvention: 'camelCase'
                         }
                     }, {
                         loader: 'postcss-loader',
@@ -125,11 +126,11 @@ const makeConfig = function (defaultConfig, options) {
             }),
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map'
-            }),
-            new MonacoWebpackPlugin({
-                languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
-                features: ['!gotoSymbol']
             })
+            // new MonacoWebpackPlugin({
+            //     languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
+            //     features: ['!gotoSymbol']
+            // })
         ].concat(options.plugins || []),
         resolve: {
             cacheWithContext: false,
@@ -137,7 +138,7 @@ const makeConfig = function (defaultConfig, options) {
             alias: {
                 // act like scratch-gui has this line in its package.json:
                 //   "browser": "./src/index.js"
-                'openblock-gui$': path.resolve(__dirname, 'node_modules', 'openblock-gui', 'src', 'index.js')
+                'scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', 'scratch-arduino-gui', 'src', 'index.js')
             }
         }
     });

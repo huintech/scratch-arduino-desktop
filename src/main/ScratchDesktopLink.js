@@ -9,10 +9,10 @@ import compareVersions from 'compare-versions';
 import sudo from 'sudo-prompt';
 import {productName} from '../../package.json';
 
-import OpenBlockLink from 'openblock-link';
+import ScratchLink from 'scratch-link';
 import OpenblockResourceServer from 'openblock-resource';
 
-class OpenblockDesktopLink {
+class ScratchDesktopLink {
     constructor () {
         this._resourceServer = null;
 
@@ -38,7 +38,7 @@ class OpenblockDesktopLink {
         this.dataPath = path.join(userDataPath, 'Data');
 
         this._storage = new ElectronStore();
-        this._link = new OpenBlockLink(this.dataPath, path.join(this.appPath, 'tools'));
+        this._link = new ScratchLink(this.dataPath, path.join(this.appPath, 'tools'));
         this._resourceServer = new OpenblockResourceServer(this.dataPath,
             path.join(this.appPath, 'external-resources'),
             app.getLocaleCountryCode());
@@ -113,4 +113,4 @@ class OpenblockDesktopLink {
     }
 }
 
-export default OpenblockDesktopLink;
+export default ScratchDesktopLink;

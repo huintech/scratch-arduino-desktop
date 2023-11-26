@@ -6,7 +6,8 @@ import fetch from 'node-fetch';
 import {S3, PutObjectCommand} from '@aws-sdk/client-s3';
 
 export const FILE_PATH = 'desktop/latestRelease.json';
-const REPO = 'openblockcc/openblock-desktop';
+// const REPO = 'openblockcc/openblock-desktop';
+const REPO = 'huintech/scratch-arduino-desktop';
 
 const s3Client = new S3({
     endpoint: 'https://sgp1.digitaloceanspaces.com',
