@@ -1,4 +1,4 @@
-# openblock-desktop
+# scratch-desktop
 
 [![Build and release](https://github.com/openblockcc/openblock-desktop/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/openblockcc/openblock-desktop/actions/workflows/build-and-release.yml)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/openblockcc/openblock-desktop)

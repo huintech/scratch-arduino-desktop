@@ -6,10 +6,10 @@ import path from 'path';
 import fetch from 'electron-fetch';
 
 import formatMessage from 'format-message';
-import parseReleaseMessage from 'openblock-parse-release-message';
-import {UPDATE_TARGET, UPDATE_MODAL_STATE} from 'openblock-gui/src/lib/update-state.js';
+import parseReleaseMessage from 'scratch-parse-release-message';
+import {UPDATE_TARGET, UPDATE_MODAL_STATE} from 'scratch-arduino-gui/src/lib/update-state.js';
 import {AbortController} from 'node-abort-controller';
-class OpenblockDesktopUpdater {
+class ScratchDesktopUpdater {
     constructor (webContents, resourceServer) {
         this._webContents = webContents;
         this._resourceServer = resourceServer;
@@ -22,7 +22,7 @@ class OpenblockDesktopUpdater {
             console.log('INFO: The current system setting region is China, use DigitalOcean as the update server.');
             autoUpdater.setFeedURL({
                 provider: 'spaces',
-                name: 'openblock',
+                name: 'coconut',
                 path: 'desktop',
                 region: 'sgp1'
             });
@@ -304,4 +304,4 @@ class OpenblockDesktopUpdater {
     }
 }
 
-export default OpenblockDesktopUpdater;
+export default ScratchDesktopUpdater;

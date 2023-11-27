@@ -7,9 +7,9 @@ import {promisify} from 'util';
 
 import argv from './argv';
 import {getFilterForExtension} from './FileFilters';
-import telemetry from './OpenblockDesktopTelemetry';
-import Updater from './OpenblockDesktopUpdater';
-import DesktopLink from './OpenblockDesktopLink.js';
+import telemetry from './ScratchDesktopTelemetry';
+import Updater from './ScratchDesktopUpdater';
+import DesktopLink from './ScratchDesktopLink';
 import MacOSMenu from './MacOSMenu';
 import log from '../common/log.js';
 import {productName, version} from '../../package.json';
@@ -17,7 +17,7 @@ import {productName, version} from '../../package.json';
 import {v4 as uuidv4} from 'uuid';
 import ElectronStore from 'electron-store';
 import formatMessage from 'format-message';
-import locales from 'openblock-l10n/locales/desktop-msgs';
+import locales from 'scratch-arduino-l10n/locales/desktop-msgs';
 
 const storage = new ElectronStore();
 const desktopLink = new DesktopLink();
@@ -313,7 +313,7 @@ const createLoadingWindow = () => {
 
 const getIsProjectSave = downloadItem => {
     switch (downloadItem.getMimeType()) {
-    case 'application/x.openblock.ob':
+    case 'application/x.scratch.sb3':
         return true;
     }
     return false;
@@ -410,13 +410,13 @@ const createMainWindow = () => {
             type: 'question',
             message: formatMessage({
                 id: 'index.questionLeave',
-                default: 'Leave Openblock?',
-                description: 'prompt for leave Openblock'
+                default: 'Leave Scratch?',
+                description: 'prompt for leave Scratch'
             }),
             detail: formatMessage({
                 id: 'index.questionLeaveDetail',
                 default: 'Any unsaved changes will be lost.',
-                description: 'detail prompt for leave Openblock'
+                description: 'detail prompt for leave Scratch'
             }),
             buttons: [
                 formatMessage({
@@ -551,7 +551,7 @@ app.on('ready', () => {
     // create a loading windows let user know the app is starting
     _windows.loading = createLoadingWindow();
     _windows.loading.once('show', () => {
-        desktopLink.updateCahce();
+        desktopLink.updateCache();
         desktopLink.start()
             .then(() => {
                 _windows.main = createMainWindow();
