@@ -22,7 +22,7 @@ class ScratchDesktopUpdater {
             console.log('INFO: The current system setting region is China, use DigitalOcean as the update server.');
             autoUpdater.setFeedURL({
                 provider: 'spaces',
-                name: 'coconut',
+                name: 'openblock',
                 path: 'desktop',
                 region: 'sgp1'
             });
@@ -55,27 +55,27 @@ class ScratchDesktopUpdater {
         this.updateTarget = UPDATE_TARGET.application;
 
         if (this.isCN) {
-            const url = `https://openblock.sgp1.digitaloceanspaces.com/desktop/latestRelease.json`;
-
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    this.reportUpdateState({
-                        phase: UPDATE_MODAL_STATE.applicationUpdateAvailable,
-                        info: {
-                            version: info.version,
-                            message: parseReleaseMessage(data.body)
-                        }
-                    });
-                })
-                .catch(err => {
-                    this.reportUpdateState({
-                        phase: UPDATE_MODAL_STATE.error,
-                        info: {
-                            message: err.message
-                        }
-                    });
-                });
+            // const url = `https://openblock.sgp1.digitaloceanspaces.com/desktop/latestRelease.json`;
+            //
+            // fetch(url)
+            //     .then(res => res.json())
+            //     .then(data => {
+            //         this.reportUpdateState({
+            //             phase: UPDATE_MODAL_STATE.applicationUpdateAvailable,
+            //             info: {
+            //                 version: info.version,
+            //                 message: parseReleaseMessage(data.body)
+            //             }
+            //         });
+            //     })
+            //     .catch(err => {
+            //         this.reportUpdateState({
+            //             phase: UPDATE_MODAL_STATE.error,
+            //             info: {
+            //                 message: err.message
+            //             }
+            //         });
+            //     });
         } else {
             this.reportUpdateState({
                 phase: UPDATE_MODAL_STATE.applicationUpdateAvailable,

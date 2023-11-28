@@ -447,7 +447,7 @@ const createMainWindow = () => {
 
         webContents.send('setPlatform', process.platform);
 
-        update.checkUpdateAtStartup();
+        // update.checkUpdateAtStartup();
     });
 
     ipcMain.on('reqeustCheckUpdate', () => {
@@ -600,7 +600,7 @@ app.on('ready', () => {
                     _windows.privacy.hide();
                 });
 
-                // after finsh load progress show main window and close loading window
+                // after finish load progress show main window and close loading window
                 _windows.main.show();
                 _windows.loading.close();
                 delete _windows.loading;
