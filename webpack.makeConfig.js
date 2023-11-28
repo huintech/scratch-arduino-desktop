@@ -138,7 +138,7 @@ const makeConfig = function (defaultConfig, options) {
             alias: {
                 // act like scratch-gui has this line in its package.json:
                 //   "browser": "./src/index.js"
-                'scratch-arduino--gui$': path.resolve(__dirname, 'node_modules', 'scratch-arduino-gui', 'src', 'index.js')
+                'scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', 'scratch-arduino-gui', 'src', 'index.js')
             }
         }
     });

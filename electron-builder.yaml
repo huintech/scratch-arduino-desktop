@@ -41,7 +41,7 @@ dmg:
 #   entitlements: buildResources/entitlements.mas.plist
 #   entitlementsInherit: buildResources/entitlements.mas.inherit.plist
 #   hardenedRuntime: false
-#   icon: buildResources/OpenBlockDesktop.icns
+#   icon: buildResources/ScratchDesktop.icns
 # masDev:
 #   type: development
 #   provisioningProfile: mas-dev.provisionprofile
@@ -52,8 +52,8 @@ win:
     # - appx
     - nsis
 # appx:
-#   identityName: "OpenblockTeam.OpenblockDesktop
-#   publisherDisplayName: "OpenBlock Team"
+#   identityName: "huintech.ScratchDesktop
+#   publisherDisplayName: "coconut"
 #   publisher: "CN=2EC43DF1-469A-4119-9AB9-568A0A1FF65F"
 nsis:
   oneClick: false # allow user to choose per-user or per-machine
@@ -66,8 +66,8 @@ nsis:
 #  icon: buildResources/linux
 #  desktop:
 #    - Encoding: UTF-8
-#    - Name: OpenBlockDesktop
-#    - Icon: openblock-desktop
+#    - Name: CoconutScratchDesktop
+#    - Icon: scratch-desktop
 #    - Type: Application
 #    - Terminal: false
 #  target:
