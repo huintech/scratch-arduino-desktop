@@ -20,7 +20,7 @@ class ScratchDesktopLink {
         if (this.appPath.search(/app/g) !== -1) {
             // Normal app
             this.appPath = path.join(this.appPath, '../../');
-        } else if (this.appPath.search(/main/g) !== -1) { // eslint-disable-line no-negated-condition
+        } else if (this.appPath.search(/main/g) !== -1) {
             // Start by start script in debug mode.
             if (os.platform() === 'linux') {
                 this.appPath = path.join(this.appPath, '../../');

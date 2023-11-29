@@ -14,6 +14,8 @@ const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 const autoprefixer = require('autoprefixer');
 const postcssVars = require('postcss-simple-vars');
 const postcssImport = require('postcss-import');
+const postcssFlexbugsFixes = require("postcss-flexbugs-fixes");
+const postcssFailOnWarn = require("postcss-fail-on-warn");
 
 const isProduction = (process.env.NODE_ENV === 'production');
 
@@ -27,7 +29,9 @@ const makeConfig = function (defaultConfig, options) {
         plugins: [
             '@babel/plugin-syntax-dynamic-import',
             '@babel/plugin-transform-async-to-generator',
-            '@babel/plugin-proposal-object-rest-spread'
+            '@babel/plugin-proposal-object-rest-spread',
+            // '@babel/plugin-transform-nullish-coalescing-operator',
+            // '@babel/plugin-transform-optional-chaining'
         ],
         presets: [
             ['@babel/preset-env', {targets: {electron: electronVersion}}]
@@ -94,9 +98,12 @@ const makeConfig = function (defaultConfig, options) {
                                 return [
                                     postcssImport,
                                     postcssVars,
-                                    autoprefixer
+                                    autoprefixer,
+                                    // postcssFlexbugsFixes,
+                                    // postcssFailOnWarn
                                 ];
-                            }
+                            },
+                            sourceMap: true
                         }
                     }]
                 },
@@ -107,17 +114,26 @@ const makeConfig = function (defaultConfig, options) {
                         outputPath: 'static/assets/'
                     }
                 },
-                {
-                    test: /\.css$/,
-                    include: MONACO_DIR,
-                    use: ['style-loader', 'css-loader']
-                },
+                // {
+                //     test: /\.css$/,
+                //     include: MONACO_DIR,
+                //     use: ['style-loader', 'css-loader']
+                // },
                 // {
                 //     test: /node_modules[/\\](iconv-lite)[/\\].+/,
                 //     resolve: {
                 //         aliasFields: ['main']
                 //     }
-                // }
+                // },
+                {
+                    test: /\.hex$/,
+                    use: [{
+                        loader: 'url-loader',
+                        options: {
+                            limit: 16 * 1024
+                        }
+                    }]
+                }
             ]
         },
         plugins: [
@@ -127,10 +143,10 @@ const makeConfig = function (defaultConfig, options) {
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map'
             }),
-            new MonacoWebpackPlugin({
-                languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
-                features: ['!gotoSymbol']
-            })
+            // new MonacoWebpackPlugin({
+            //     languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
+            //     features: ['!gotoSymbol']
+            // })
         ].concat(options.plugins || []),
         resolve: {
             cacheWithContext: false,
