@@ -38,7 +38,9 @@
   "dependencies": {
     "bytes": "^3.1.2",
     "postinstall": "^0.7.4",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+      "scratch-link": "^0.2.0-prerelease.20221129121549",
+      "scratch-resource": "^0.2.0-prerelease.20220716123724"
   },
   "peerDependencies": {
     "postcss": "^8.0.0",
