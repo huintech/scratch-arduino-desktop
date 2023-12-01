@@ -17,7 +17,7 @@ import {productName, version} from '../../package.json';
 import {v4 as uuidv4} from 'uuid';
 import ElectronStore from 'electron-store';
 import formatMessage from 'format-message';
-import locales from 'scratch-arduino-l10n/locales/desktop-msgs';
+import locales from '@huintech/coconut-scratch-l10n/locales/desktop-msgs';
 
 const storage = new ElectronStore();
 const desktopLink = new DesktopLink();

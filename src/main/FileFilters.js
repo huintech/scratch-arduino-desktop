@@ -23,10 +23,6 @@ const saveFilters = {
         name: 'Scratch 3 Project',
         extensions: ['sb3']
     },
-    OB: {
-        name: 'OpenBlock Project',
-        extensions: ['ob']
-    },
     Sprite2: {
         name: 'Scratch 2 Sprite',
         extensions: ['sprite2']
@@ -68,7 +64,7 @@ const loadFilters = {
             ...saveFilters.SB3.extensions,
             ...saveFilters.SB2.extensions,
             ...saveFilters.SB.extensions,
-            ...saveFilters.OB.extensions
+            // ...saveFilters.OB.extensions
         ]
     },
     AllSounds: {

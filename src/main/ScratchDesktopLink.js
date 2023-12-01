@@ -9,8 +9,8 @@ import compareVersions from 'compare-versions';
 import sudo from 'sudo-prompt';
 import {productName} from '../../package.json';
 
-import ScratchLink from 'scratch-link';
-import ScratchResourceServer from 'scratch-resource';
+import ScratchLink from '@huintech/coconut-link';
+import ScratchResourceServer from '@huintech/scratch-resource';
 
 class ScratchDesktopLink {
     constructor () {
