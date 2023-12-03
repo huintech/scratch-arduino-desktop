@@ -16,6 +16,7 @@ module.exports = defaultConfig =>
             babelPaths: [
                 path.resolve(__dirname, 'src', 'renderer'),
                 /node_modules[\\/]+scratch-[^\\/]+[\\/]+src/,
+                /node_modules[\\/]+scratch-arduino-[^\\/]+[\\/]+src/,
                 /node_modules[\\/]+@huintech[\\/]+scratch-arduino-[^\\/]+[\\/]+src/,
                 /node_modules[\\/]+@huintech[\\/]+coconut-scratch-[^\\/]+[\\/]+src/,
                 /node_modules[\\/]+@huintech[\\/]+coconut-[^\\/]+[\\/]+src/,
@@ -32,7 +33,7 @@ module.exports = defaultConfig =>
                     context: path.join(getModulePath('@huintech/scratch-arduino-vm'), 'dist', 'web')
                 }]),
                 new CopyWebpackPlugin([{
-                    from: path.join(getModulePath('@huintech/scratch-arduino-gui'), 'src', 'lib', 'libraries', '*.json'),
+                    from: path.join(getModulePath('scratch-arduino-gui'), 'src', 'lib', 'libraries', '*.json'),
                     to: 'static/libraries',
                     flatten: true
                 }])

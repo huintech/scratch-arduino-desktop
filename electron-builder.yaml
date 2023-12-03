@@ -60,19 +60,3 @@ nsis:
   allowToChangeInstallationDirectory: true
   include: buildResources/installer.nsh
 #   license: LICENSE
-
-#linux:
-#  category: Education
-#  icon: buildResources/linux
-#  desktop:
-#    - Encoding: UTF-8
-#    - Name: CoconutScratchDesktop
-#    - Icon: scratch-desktop
-#    - Type: Application
-#    - Terminal: false
-#  target:
-#    - deb
-#
-#deb:
-#  depends: ["libnotify4", "libxtst6", "libnss3"]
-

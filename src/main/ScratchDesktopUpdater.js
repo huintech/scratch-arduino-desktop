@@ -7,7 +7,7 @@ import fetch from 'electron-fetch';
 
 import formatMessage from 'format-message';
 import parseReleaseMessage from '@huintech/scratch-parse-release-message';
-import {UPDATE_TARGET, UPDATE_MODAL_STATE} from '@huintech/scratch-arduino-gui/src/lib/update-state.js';
+import {UPDATE_TARGET, UPDATE_MODAL_STATE} from 'scratch-arduino-gui/src/lib/update-state';
 import {AbortController} from 'node-abort-controller';
 class ScratchDesktopUpdater {
     constructor (webContents, resourceServer) {

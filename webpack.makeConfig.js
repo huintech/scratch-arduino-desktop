@@ -84,11 +84,13 @@ const makeConfig = function (defaultConfig, options) {
                     }, {
                         loader: 'css-loader',
                         options: {
-                            modules: {
-                                localIdentName: '[name]_[local]_[hash:base64:5]',
-                            },
+                            modules: true,
+                            // modules: {
+                            //     localIdentName: '[name]_[local]_[hash:base64:5]',
+                            // },
                             importLoaders: 1,
-                            localsConvention: 'camelCase'
+                            localIdentName: '[name]_[local]_[hash:base64:5]',
+                            camelCase: true
                         }
                     }, {
                         loader: 'postcss-loader',
@@ -154,7 +156,7 @@ const makeConfig = function (defaultConfig, options) {
             alias: {
                 // act like scratch-gui has this line in its package.json:
                 //   "browser": "./src/index.js"
-                '@huintech/scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', '@huintech/scratch-arduino-gui', 'src', 'index.js')
+                'scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', 'scratch-arduino-gui', 'src', 'index.js')
             }
         }
     });

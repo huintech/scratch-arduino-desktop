@@ -44,7 +44,7 @@
   },
   "peerDependencies": {
     "postcss": "^8.0.0",
-    "monaco-editor": "0.31.0"
+    "monaco-editor": "0.15.1"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.53.1",
@@ -58,7 +58,7 @@
     "@babel/preset-react": "^7.9.4",
     "@electron/remote": "^2.0.5",
     "@huintech/coconut-scratch-l10n": "0.8.0",
-    "@huintech/scratch-arduino-gui": "^0.8.1",
+    "scratch-arduino-gui": "github:huintech/scratch-arduino-gui#desktop-v0.9.1",
     "@huintech/scratch-parse-release-message": "0.8.0",
     "async": "^3.2.0",
     "autoprefixer": "9.8.8",
@@ -92,8 +92,8 @@
     "minilog": "^3.1.0",
     "minimist": "^1.2.5",
     "mkdirp": "^1.0.4",
-    "monaco-editor": "^0.31.0",
-    "monaco-editor-webpack-plugin": "7.1.0",
+    "monaco-editor": "^0.15.1",
+    "monaco-editor-webpack-plugin": "^1.7.0",
     "nets": "^3.2.0",
     "node-abort-controller": "^3.0.1",
     "node-fetch": "^3.2.1",
@@ -108,13 +108,18 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-intl": "2.9.0",
-    "react-redux": "5.0.7",
+    "react-redux": "5.1.2",
+    "react-responsive": "5.0.0",
+    "react-intl-redux": "^0.7",
     "redux": "3.7.2",
     "rimraf": "^3.0.2",
     "sudo-prompt": "^9.2.1",
     "uuid": "^8.3.2",
     "webpack": "^4.43.0",
     "webpack-merge": "4.2.2"
+  },
+  "resolutions": {
+    "upath": "^1.0.5"
   },
   "browserslist": [
     "last 3 version",
