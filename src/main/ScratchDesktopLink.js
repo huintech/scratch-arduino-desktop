@@ -56,15 +56,27 @@ class ScratchDesktopLink {
             execFile('install_x86.bat', [], {cwd: driverPath});
         } else if ((os.platform() === 'darwin')) {
             spawn('sh', ['install.sh'], {shell: true, cwd: driverPath});
-        } else if ((os.platform() === 'linux')) {
-            sudo.exec(`sh ${path.join(driverPath, 'linux_setup.sh')} yang`, {name: productName},
-                error => {
-                    if (error) throw error;
-                    if (callback) {
-                        callback();
-                    }
-                }
-            );
+        }
+        // const fileName = path.join(driverPath, 'coconut-drivers.zip');
+        // console.log(`${fileName}`);
+        // this.downloadLocalZipFile();
+    }
+
+    // Function to download the local zip file
+    downloadLocalZipFile() {
+        const driverPath = path.join(this.appPath, 'drivers');
+        const fileName = path.join(driverPath, 'coconut-drivers-win.zip');
+
+        try {
+            // Read the content of the source zip file
+            const zipFileContent = fs.readFileSync(fileName);
+
+            // Save the zip file to the destination path
+            fs.writeFileSync('coconut-drivers-win.zip', zipFileContent);
+
+            console.log('Local zip file downloaded successfully!');
+        } catch (error) {
+            console.error('Error downloading local zip file:', error.message);
         }
     }
 

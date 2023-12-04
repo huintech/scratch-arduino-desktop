@@ -1,11 +1,10 @@
-/* eslint-disable */
 const downloadRelease = require('download-github-release');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
 
-const user = 'openblockcc';
-const repo = 'openblock-driver';
+const user = 'huintech';
+const repo = 'coconut-driver';
 const outputdir = path.join(__dirname, '../drivers');
 const leaveZipped = false;
 

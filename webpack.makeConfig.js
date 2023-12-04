@@ -146,7 +146,7 @@ const makeConfig = function (defaultConfig, options) {
             }),
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map'
-            }),
+            })
             // new MonacoWebpackPlugin({
             //     languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
             //     features: ['!gotoSymbol']
