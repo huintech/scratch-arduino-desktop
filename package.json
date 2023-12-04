@@ -42,10 +42,6 @@
     "@huintech/coconut-link": "0.8.0",
     "@huintech/scratch-resource": "0.8.1"
   },
-  "peerDependencies": {
-    "postcss": "^8.0.0",
-    "monaco-editor": "0.15.1"
-  },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.53.1",
     "@babel/core": "^7.9.6",
@@ -57,8 +53,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@electron/remote": "^2.0.5",
-    "@huintech/coconut-scratch-l10n": "0.8.0",
-    "scratch-arduino-gui": "github:huintech/scratch-arduino-gui#desktop-v0.9.1",
+    "@huintech/coconut-scratch-l10n": "^0.8.1",
     "@huintech/scratch-parse-release-message": "0.8.0",
     "async": "^3.2.0",
     "autoprefixer": "9.8.8",
@@ -108,11 +103,12 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-intl": "2.9.0",
+    "react-intl-redux": "^0.7",
     "react-redux": "5.1.2",
     "react-responsive": "5.0.0",
-    "react-intl-redux": "^0.7",
     "redux": "3.7.2",
     "rimraf": "^3.0.2",
+    "scratch-arduino-gui": "github:huintech/scratch-arduino-gui#desktop-v0.9.2",
     "sudo-prompt": "^9.2.1",
     "uuid": "^8.3.2",
     "webpack": "^4.43.0",

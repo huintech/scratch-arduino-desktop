@@ -78,19 +78,21 @@ const makeConfig = function (defaultConfig, options) {
                 },
                 { // coped from scratch-gui
                     test: /\.css$/,
-                    exclude: MONACO_DIR,
+                    // exclude: MONACO_DIR,
                     use: [{
                         loader: 'style-loader'
                     }, {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
-                            // modules: {
-                            //     localIdentName: '[name]_[local]_[hash:base64:5]',
-                            // },
+                            // modules: true,
+                            // importLoaders: 1,
+                            // localIdentName: '[name]_[local]_[hash:base64:5]',
+                            // camelCase: true
+                            modules: {
+                                localIdentName: '[name]_[local]_[hash:base64:5]',
+                            },
                             importLoaders: 1,
-                            localIdentName: '[name]_[local]_[hash:base64:5]',
-                            camelCase: true
+                            localsConvention: 'camelCase'
                         }
                     }, {
                         loader: 'postcss-loader',
