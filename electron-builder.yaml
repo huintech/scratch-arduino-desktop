@@ -6,11 +6,7 @@ extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "exte
 appId: net.huintech.scratch-desktop
 productName: "CoconutScratchDesktop"
 publish:
-  - provider: github
-  - provider: spaces
-    name: coconut
-    path: desktop
-    region: sgp1
+  provider: github
 artifactName: "Coconut-ScratchDesktop_v${version}_${os}_${arch}.${ext}"
 
 fileAssociations:
@@ -60,19 +56,3 @@ nsis:
   allowToChangeInstallationDirectory: true
   include: buildResources/installer.nsh
 #   license: LICENSE
-
-#linux:
-#  category: Education
-#  icon: buildResources/linux
-#  desktop:
-#    - Encoding: UTF-8
-#    - Name: CoconutScratchDesktop
-#    - Icon: scratch-desktop
-#    - Type: Application
-#    - Terminal: false
-#  target:
-#    - deb
-#
-#deb:
-#  depends: ["libnotify4", "libxtst6", "libnss3"]
-

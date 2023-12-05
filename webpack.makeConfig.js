@@ -78,12 +78,16 @@ const makeConfig = function (defaultConfig, options) {
                 },
                 { // coped from scratch-gui
                     test: /\.css$/,
-                    exclude: MONACO_DIR,
+                    // exclude: MONACO_DIR,
                     use: [{
                         loader: 'style-loader'
                     }, {
                         loader: 'css-loader',
                         options: {
+                            // modules: true,
+                            // importLoaders: 1,
+                            // localIdentName: '[name]_[local]_[hash:base64:5]',
+                            // camelCase: true
                             modules: {
                                 localIdentName: '[name]_[local]_[hash:base64:5]',
                             },
@@ -142,7 +146,7 @@ const makeConfig = function (defaultConfig, options) {
             }),
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map'
-            }),
+            })
             // new MonacoWebpackPlugin({
             //     languages: ['c', 'cpp', 'python', 'lua', 'javascript'],
             //     features: ['!gotoSymbol']
@@ -154,7 +158,7 @@ const makeConfig = function (defaultConfig, options) {
             alias: {
                 // act like scratch-gui has this line in its package.json:
                 //   "browser": "./src/index.js"
-                '@huintech/scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', '@huintech/scratch-arduino-gui', 'src', 'index.js')
+                'scratch-arduino-gui$': path.resolve(__dirname, 'node_modules', 'scratch-arduino-gui', 'src', 'index.js')
             }
         }
     });

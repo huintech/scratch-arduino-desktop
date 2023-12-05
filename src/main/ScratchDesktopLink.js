@@ -56,19 +56,11 @@ class ScratchDesktopLink {
             execFile('install_x86.bat', [], {cwd: driverPath});
         } else if ((os.platform() === 'darwin')) {
             spawn('sh', ['install.sh'], {shell: true, cwd: driverPath});
-        } else if ((os.platform() === 'linux')) {
-            sudo.exec(`sh ${path.join(driverPath, 'linux_setup.sh')} yang`, {name: productName},
-                error => {
-                    if (error) throw error;
-                    if (callback) {
-                        callback();
-                    }
-                }
-            );
         }
     }
 
     clearCache (reboot = true) {
+        console.log(`datapath= ${this.dataPath}`);
         if (fs.existsSync(this.dataPath)) {
             fs.rmSync(this.dataPath, {recursive: true, force: true});
         }

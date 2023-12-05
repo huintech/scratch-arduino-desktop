@@ -6,7 +6,7 @@ import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
-import GUIComponent from '@huintech/scratch-arduino-gui/src/components/gui/gui.jsx';
+import GUIComponent from 'scratch-arduino-gui/src/components/gui/gui.jsx';
 import {FormattedMessage} from 'react-intl';
 
 import {
@@ -17,17 +17,17 @@ import {
     requestNewProject,
     requestProjectUpload,
     setProjectId
-} from '@huintech/scratch-arduino-gui/src/reducers/project-state';
+} from 'scratch-arduino-gui/src/reducers/project-state';
 import {
     openLoadingProject,
     closeLoadingProject,
     openTelemetryModal,
     openUpdateModal
-} from '@huintech/scratch-arduino-gui/src/reducers/modals';
-import {setUpdate} from '@huintech/scratch-arduino-gui/src/reducers/update';
+} from 'scratch-arduino-gui/src/reducers/modals';
+import {setUpdate} from 'scratch-arduino-gui/src/reducers/update';
 
-import analytics, {initialAnalytics} from '@huintech/scratch-arduino-gui/src/lib/analytics';
-import MessageBoxType from '@huintech/scratch-arduino-gui/src/lib/message-box.js';
+import analytics, {initialAnalytics} from 'scratch-arduino-gui/src/lib/analytics';
+import MessageBoxType from 'scratch-arduino-gui/src/lib/message-box.js';
 
 import ElectronStorageHelper from '../common/ElectronStorageHelper';
 

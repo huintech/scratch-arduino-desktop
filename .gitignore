@@ -32,3 +32,6 @@ npm-*
 # generated translation files
 /translations
 /locale
+
+# Backup files
+*-bak*
