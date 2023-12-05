@@ -6,11 +6,7 @@ extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "exte
 appId: net.huintech.scratch-desktop
 productName: "CoconutScratchDesktop"
 publish:
-  - provider: github
-  - provider: spaces
-    name: coconut
-    path: desktop
-    region: sgp1
+  provider: github
 artifactName: "Coconut-ScratchDesktop_v${version}_${os}_${arch}.${ext}"
 
 fileAssociations:
