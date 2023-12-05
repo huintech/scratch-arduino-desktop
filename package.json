@@ -3,7 +3,7 @@
   "productName": "CoconutScratchDesktop",
   "description": "Scratch 3.0 as a self-contained desktop application",
   "author": "coconut",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "license": "MIT",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
@@ -113,7 +113,7 @@
     "react-responsive": "5.0.0",
     "redux": "3.7.2",
     "rimraf": "^3.0.2",
-    "scratch-arduino-gui": "github:huintech/scratch-arduino-gui#desktop-v0.9.4",
+    "scratch-arduino-gui": "github:huintech/scratch-arduino-gui#desktop-v0.9.5",
     "sudo-prompt": "^9.2.1",
     "uuid": "^8.3.2",
     "webpack": "^4.43.0",
