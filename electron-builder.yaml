@@ -56,3 +56,35 @@ nsis:
   allowToChangeInstallationDirectory: true
   include: buildResources/installer.nsh
 #   license: LICENSE
+
+linux:
+    category: Education
+    icon: buildResources/linux
+    desktop:
+        - Encoding: UTF-8
+        - Name: CoconutScratchDesktop
+        - Icon: buildResources/ScratchDesktop.ico
+        - Type: Application
+        - Terminal: false
+    target:
+        - AppImage
+        - deb
+#        - snap
+
+AppImage:
+    artifactName: "${productName}-${version}-{arch}.${ext}"
+
+#snap:
+#    grade: stable
+#    confinement: strict
+#    summary: "Coconut Scratch 3.0 App"
+#    plugs:
+#        - home
+#        - x11
+#        - network
+#        - gsettings
+#        - audio-playback
+#        - pulseaudio
+
+deb:
+    depends: [ "libnotify4", "libxtst6", "libnss3" ]
