@@ -281,16 +281,16 @@ const createLicenseWindow = () => {
     return window;
 };
 
-const createPrivacyWindow = () => {
-    const window = createWindow({
-        width: _windows.main.width * 0.8,
-        height: _windows.main.height * 0.8,
-        parent: _windows.main,
-        search: 'route=privacy',
-        title: `${productName} Privacy Policy`
-    });
-    return window;
-};
+// const createPrivacyWindow = () => {
+//     const window = createWindow({
+//         width: _windows.main.width * 0.8,
+//         height: _windows.main.height * 0.8,
+//         parent: _windows.main,
+//         search: 'route=privacy',
+//         title: `${productName} Privacy Policy`
+//     });
+//     return window;
+// };
 
 const createLoadingWindow = () => {
     const window = createWindow({
@@ -594,11 +594,11 @@ app.on('ready', () => {
                     event.preventDefault();
                     _windows.license.hide();
                 });
-                _windows.privacy = createPrivacyWindow();
-                _windows.privacy.on('close', event => {
-                    event.preventDefault();
-                    _windows.privacy.hide();
-                });
+                // _windows.privacy = createPrivacyWindow();
+                // _windows.privacy.on('close', event => {
+                //     event.preventDefault();
+                //     _windows.privacy.hide();
+                // });
 
                 // after finish load progress show main window and close loading window
                 _windows.main.show();

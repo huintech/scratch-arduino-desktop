@@ -1,0 +1,49 @@
+directories:
+  buildResources: buildResources
+  output: linux
+extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
+
+appId: net.huintech.scratch-desktop
+productName: "CoconutScratchDesktop"
+publish:
+  provider: github
+artifactName: "Coconut-ScratchDesktop_v${version}_${os}_${arch}.${ext}"
+
+fileAssociations:
+  ext: sb3
+  name: Scratch project file
+  role: Editor
+  icon: buildResources/ScratchDesktop.ico
+
+linux:
+    category: Education
+    icon: buildResources/linux
+    desktop:
+        - Encoding: UTF-8
+        - Name: CoconutScratchDesktop
+        - Icon: buildResources/ScratchDesktop.ico
+        - Type: Application
+        - Terminal: false
+    target:
+        - AppImage
+        - snap
+        - deb
+
+AppImage:
+    artifactName: "${productName}-${version}-{arch}.${ext}"
+
+snap:
+    grade: stable
+    confinement: strict
+    summary: "Coconut Scratch 3.0 App"
+    plugs:
+        - home
+        - x11
+        - network
+        - gsettings
+        - audio-playback
+        - pulseaudio
+
+deb:
+    depends: ["libnotify4", "libxtst6", "libnss3"]
+
