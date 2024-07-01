@@ -1,0 +1,35 @@
+directories:
+  buildResources: buildResources
+  output: dist
+extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
+
+appId: net.huintech.scratch-desktop
+productName: "CoconutScratchDesktop"
+publish:
+  - provider: github
+  - provider: spaces
+    name: coconut
+    path: desktop
+    region: sgp1
+artifactName: "Coconut-ScratchDesktop_v${version}_${os}_${arch}.${ext}"
+
+fileAssociations:
+  ext: sb3
+  name: Scratch project file
+  role: Editor
+  icon: buildResources/ScratchDesktop.ico
+
+win:
+  icon: buildResources/ScratchDesktop.ico
+  target:
+    # - appx
+    - nsis
+# appx:
+#   identityName: "OpenblockTeam.OpenblockDesktop
+#   publisherDisplayName: "OpenBlock Team"
+#   publisher: "CN=2EC43DF1-469A-4119-9AB9-568A0A1FF65F"
+nsis:
+  oneClick: false # allow user to choose per-user or per-machine
+  allowToChangeInstallationDirectory: true
+  include: buildResources/installer.nsh
+#   license: LICENSE

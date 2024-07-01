@@ -5,22 +5,14 @@ import styles from './privacy.css';
 const PrivacyElement = () => (
     <div className={styles.privacyBox}>
         <h1>Privacy Policy</h1>
-        <i>The OpenBlock Privacy Policy was last updated: October 5, 2020</i>
+        {/*<i>The Privacy Policy was last updated: October 5, 2020</i>*/}
         <p>
-            The OpenBlock Team (&ldquo;OpenBlock&rdquo;, &ldquo;we&rdquo; or &ldquo;us&rdquo;) understands how
-            important privacy is to our community. We wrote this Privacy Policy to explain what Personal Information
-            (&ldquo;Information&rdquo;) we collect through our offline editor (the &ldquo;<a
-                href="https://wiki.openblock.cc/zh/download-software/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >OpenBlock App</a>&rdquo;), how we use, process, and share it, and what we&apos;re doing to keep it safe. It
-            also tells you about your rights and choices with respect to your Personal Information, and how you can <a
-                href="https://www.openblock.cc/contact-us/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >contact us</a> if you have any questions or concerns.
+            The Scratch Team understands how important privacy is to our community.
+            We wrote this Privacy Policy to explain what Personal Information
+            (&ldquo;Information&rdquo;) we collect through our offline editor (the &ldquo;Coconut Scratch App&rdquo;),
+            how we use, process, and share it, and what we&apos;re doing to keep it safe.
         </p>
-        <h2>What Information Does OpenBlock Collect About Me?</h2>
+        <h2>What Information Does Coconut Scratch Collect About Me?</h2>
         <p>
             For the purpose of this Privacy Policy, &ldquo;Information&rdquo; means any information relating to an
             identified or identifiable individual. The OpenBlock App automatically collects and stores locally the
